@@ -2,11 +2,11 @@ import { RaceInterface, RaceProps } from "./race";
 
 
 export class Race implements RaceInterface {
-    private constructor(readonly props: RaceProps) {
+    constructor(private readonly props: RaceProps) {
 
     }
 
-    build({ name, attack, defense, health }: RaceProps) {
+    public static build({ name, attack, defense, health }: RaceProps) {
         const race = new Race({ name, attack, defense, health })
         return race
     }

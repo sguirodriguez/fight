@@ -1,4 +1,4 @@
-import { RaceTypes } from "../race/race";
+import { RaceInterface } from "../race/race";
 import { CharacterInterface, CharacterTypes } from "./character";
 
 export class Character implements CharacterInterface {
@@ -7,8 +7,8 @@ export class Character implements CharacterInterface {
     constructor(private readonly props: CharacterTypes) {
     }
 
-    public static build({ name, age, type }: CharacterTypes): Character {
-        const character = new Character({ name, age, type });
+    public static build({ name, age, race }: CharacterTypes): Character {
+        const character = new Character({ name, age, race });
 
         return character
     }
@@ -19,7 +19,7 @@ export class Character implements CharacterInterface {
     getAge() {
         return this.props.age
     }
-    getType(): RaceTypes {
-        return this.props.type
+    getRace(): RaceInterface {
+        return this.props.race;
     }
 }

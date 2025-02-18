@@ -1,16 +1,20 @@
-import { RaceTypes } from "../race/race";
+import { RaceInterface } from "../race/race";
+import { Race } from "../race/race.implementations";
 
-//segue interface segregation
-//segue LISKOV
+//segue interface segregation: Os clientes não devem ser forçados a depender de interfaces que não utilizam -> CharacterInterface define apenas os métodos necessários 
+
+//segue LISKOV pois ---> Uma subclasse deve poder substituir sua classe base sem interromper o funcionamento do programa.
+//exemplo liskov: se você criar uma classe que estenda Character (por exemplo, ElfCharacter ou OrcCharacter),
+//ela pode ser usada no lugar de Character sem quebrar o funcionamento, pois todos os métodos necessários são implementados de maneira consistente.
 
 export type CharacterTypes = {
     name: string,
     age: number,
-    type: RaceTypes
+    race: RaceInterface
 }
 
 export type CharacterInterface = {
     getName(): string;
     getAge(): number;
-    getType(): RaceTypes
+    getRace(): RaceInterface
 }
