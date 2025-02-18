@@ -1,5 +1,4 @@
 import { RaceInterface } from "../race/race";
-import { Race } from "../race/race.implementations";
 
 //segue interface segregation: Os clientes não devem ser forçados a depender de interfaces que não utilizam -> CharacterInterface define apenas os métodos necessários 
 

@@ -4,6 +4,7 @@ import { CharacterInterface, CharacterTypes } from "./character";
 export class Character implements CharacterInterface {
     // seguindo Single Responsability, poucas responsabilidades e referentes apenas ao character
     // seguindo aberto e fechado, fechado para modificação, mas permitindo extensão
+    // seguindo a inversao de dependencias, o character nao depende de uma classe concreta, mas de uma interface de race
     constructor(private readonly props: CharacterTypes) {
     }
 
