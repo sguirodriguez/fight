@@ -4,12 +4,12 @@ export type RaceProps = {
     name: RaceTypes;
     attack: number;
     defense: number;
-    health: number;
+    baseHealth: number;
 }
 
 export type RaceInterface = {
-    getName(): string;
+    getName(): RaceTypes;
     getAttack(): number;
     getDefense(): number;
-    getHealth(): number;
+    getBaseHealth(): number;
 }

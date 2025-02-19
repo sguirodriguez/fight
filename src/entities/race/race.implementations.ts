@@ -1,17 +1,16 @@
-import { RaceInterface, RaceProps } from "./race";
+import { RaceInterface, RaceProps, RaceTypes } from "./race";
 
 
 export class Race implements RaceInterface {
     constructor(private readonly props: RaceProps) {
-
     }
 
-    public static build({ name, attack, defense, health }: RaceProps) {
-        const race = new Race({ name, attack, defense, health })
+    public static build({ name, attack, defense, baseHealth }: RaceProps) {
+        const race = new Race({ name, attack, defense, baseHealth })
         return race
     }
 
-    getName(): string {
+    getName(): RaceTypes {
         return this.props.name
     }
 
@@ -23,7 +22,7 @@ export class Race implements RaceInterface {
         return this.props.defense
     }
 
-    getHealth(): number {
-        return this.props.health
+    getBaseHealth(): number {
+        return this.props.baseHealth
     }
 }
