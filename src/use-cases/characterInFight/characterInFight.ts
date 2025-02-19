@@ -6,7 +6,10 @@ export type CharacterInFightProps = CharacterTypes
 export type CharacterInFightInterfaces = {
     getName(): string;
     getRace(): RaceProps;
-    getHealth(): number;
+    getStatus(): {
+        health: number;
+        injury: number;
+    };
     takeDamage(damage: number): void;
     isAlive(): boolean;
 }

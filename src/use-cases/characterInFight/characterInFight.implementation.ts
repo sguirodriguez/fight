@@ -25,17 +25,19 @@ export class CharacterInFight implements CharacterInFightInterfaces {
         }
     }
 
-    getHealth() {
-        return this.health;
+    getStatus() {
+        return {
+            health: this.health,
+            injury: this.getRace().baseHealth - this.health
+        }
     }
 
     takeDamage(damage: number) {
-        const injury = damage - this.props.race.getDefense()
-        if (injury < 0) {
-            return
+        if (!damage) return
+        if (damage > this.health) {
+            return this.health = this.health - this.health
         }
-        this.health - injury
-        return
+        return this.health = this.health - damage
     }
 
     isAlive() {

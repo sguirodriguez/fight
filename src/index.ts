@@ -1,5 +1,5 @@
-import { Character } from "./entities/character/character.implementations";
-import { Race } from "./entities/race/race.implementations";
+import { Character } from "./entities/character/character.implementation";
+import { Race } from "./entities/race/race.implementation";
 import { CharacterInFight } from "./use-cases/characterInFight/characterInFight.implementation";
 import { Fight } from "./use-cases/fight/fight.implementation";
 
@@ -34,6 +34,11 @@ const character2InFightStates = CharacterInFight.build({
     race: character2.getRace()
 })
 
-console.log("character1InFightStates", character1InFightStates);
+const fight = Fight.build({ character1: character1InFightStates, character2: character2InFightStates })
+
+const round1 = fight.startFight({ char1Intentions: "attack", char2Intentions: "attack" })
+console.log("round1--->", round1)
+const round2 = fight.startFight({ char1Intentions: "attack", char2Intentions: "attack" })
+console.log("round2--->", round2)
 
 
